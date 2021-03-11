@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NativePython Conditional and Control Statements </title>
+
+</head>
+<body>
+    <u><b> <p class="header">Conditional Statements</p> </b></u>
+    {% if r == True %}
+        <p>Boolean arrived as True</p>
+    {% else %}
+        <p>Boolean arrived as  False</p>
+    {% endif %}
+    <hr>
+    <u><b><p class="header">String List</p></b></u>
+    {% for i in lst %}
+        <p>{{i}}</p>
+    {% endfor %}
+    <hr>
+        <u><b><p class="header">Number Range using loop and if,elif,else statements</p></b></u>
+        {% for n in range(num) %}
+            {% if n==0 %}
+                <p>zero => {{n}} </p>
+            {% elif n%5==0 %}
+                <p>Multiples of 5 : {{n}}</p>
+            {% else %}
+                <p>Not Divisible by 5: {{n}}</p>
+            {% endif %}
+        {% endfor %}
+    <hr>
+        <u><b><p class="header">Table Creation for minion list</p></b></u>
+    <table border="1">
+        <tr bgcolor="blue">
+            <th>name</th>
+            <th>age</th>
+            <th>eyes</th>
+        </tr>
+
+        {% for l in minion %}
+            <tr>
+                <td>{{l.name}}</td>
+                <td>{{l.age}}</td>
+                <td>{{l.eyes}}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+    <hr>
+</body>
+</html>
