@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title_block %}
+    View User Details
+{% endblock title_block %}
+{% block header_content %}
+    <table>
+        <tr>
+            <th>UsersID</th>
+            <th>EmailID</th>
+        </tr>
+        {% for i in records %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.emailId}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock header_content %}

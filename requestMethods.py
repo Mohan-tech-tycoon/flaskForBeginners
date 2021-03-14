@@ -10,6 +10,7 @@ def home():
 
 @app.route("/login", methods=["POST", "GET"])
 def login_page():
+    print(request.form)
     if request.method == "POST":
         username = request.form["usernm"]
         return redirect(url_for("user_page", usr=username))
@@ -19,7 +20,7 @@ def login_page():
 
 @app.route("/<usr>")
 def user_page(usr):
-    return render_template("header.html",cont=usr)
+    return render_template("header.html", cont=usr)
 
 
 if __name__ == "__main__":
