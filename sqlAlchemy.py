@@ -54,12 +54,15 @@ def userPage():
     email = None
     if "userval" in session:
         username = session["userval"]
+        print(request.form)
         if request.method == "POST":
             email = request.form["emailID"]
             session["email"] = email
             # Below code will add email in the record type later will can be used for adding in db
             record_found = users.query.filter_by(name=username).first()
             record_found.emailId = email
+            print(record_found._id, record_found.name, record_found.emailId)
+            db.session.commit()
             flash("Saved..!!!")
         return render_template("user.html", emailInfo=email)
     else:
